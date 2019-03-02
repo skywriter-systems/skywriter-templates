@@ -169,6 +169,15 @@ bm.add('my-sec', {
     content: '<a>Link</a>',
     attributes: {class:'fa fa-link gjs-block gjs-one-bg gjs-four-color-h'},
   });
+  
+//'PLACEHOLDER FOR BUTTON
+  bm.add('button', {
+  label: 'Button',
+  category: 'Basic',
+  content: '<div class="my-block">This is a simple block</div>',
+  attributes: {class: 'fa fa-th-large'},
+ });
+
 
   bm.add('my-image', {
     label: 'Image',
@@ -184,35 +193,30 @@ bm.add('my-sec', {
     attributes: {class:'fa fa-youtube-play gjs-block gjs-one-bg gjs-four-color-h'},
   });
 
+ /* 
   bm.add('my-map', {
     label: 'Map',
     category: 'Basic',
     content: '<iframe frameborder="0" id="imzth" src="https://maps.google.com/maps?&z=1&t=q&output=embed"></iframe>',
 
     attributes: {class:'fa fa-map-o gjs-block gjs-one-bg gjs-four-color-h'},
+  });*/
+
+//'PLACEHOLDER FOR SUBSCRIBE
+    bm.add('subscribe', {
+    label: 'Subscribe',
+    category: 'Basic',
+    content: '<div class="my-block">This is a simple block</div>',
+    attributes: {class:'fa fa-address-card'},
   });
 
-/*  Add if a Tabs block is desired, but style will need to be added first
-    bm.add('my-tabs', {
-    label: '<svg class="gjs-block-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd"><path d="M22 9.3c0-.8-.5-1.3-1.3-1.3H3.4C2.5 8 2 8.5 2 9.3v7.4c0 .8.5 1.3 1.3 1.3h17.4c.8 0 1.3-.5 1.3-1.3V9.3zM21 17H3V9h18v8z" fill-rule="nonzero"></path><rect x="3" y="5" width="4" height="2" rx=".5"></rect><rect x="8" y="5" width="4" height="2" rx=".5"></rect><rect x="13" y="5" width="4" height="2" rx=".5"></rect></g></svg><br>Tabs',
-    category: 'Extra',
-    content:{
-        content:'<div data-tabs="1" id="iyy7i"><nav data-tab-container="1" class="tab-container"><a href="#tab1" data-tab="1" class="tab">Tab 1</a><a href="#tab2" data-tab="1" class="tab">Tab 2</a><a href="#tab3" data-tab="1" class="tab">Tab 3</a></nav><div id="tab1" data-tab-content="1" class="tab-content"><div>Tab 1 Content</div></div><div id="tab2" data-tab-content="1" class="tab-content"><div>Tab 2 Content</div></div><div id="tab3" data-tab-content="1" class="tab-content"><div>Tab 3 Content</div></div></div>'
-            },
-    attributes: {class:'gjs-block gjs-blocks-c gjs-block-label gjs-one-bg gjs-four-color-h',
-        
-    },
-  });*/
- 
-  bm.add('my-slider', {
-    label: '<svg class="gjs-block-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 7.6c0-1-.5-1.6-1.3-1.6H3.4C2.5 6 2 6.7 2 7.6v9.8c0 1 .5 1.6 1.3 1.6h17.4c.8 0 1.3-.6 1.3-1.6V7.6zM21 18H3V7h18v11z" fill-rule="nonzero"></path><path d="M4 12.5L6 14v-3zM20 12.5L18 14v-3z"></path></svg><br>Slider',
-    category: 'Extra',
-    content: '<div id="ir0jg"><div class="gjs-lory-frame" id="ibgq4"><div class="gjs-lory-slides" id="intqn"><div class="gjs-lory-slide" id="ib2ji"></div><div class="gjs-lory-slide" id="i8nf8"></div><div class="gjs-lory-slide" id="i7leb"></div></div></div><span class="gjs-lory-prev" id="irdg1"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"></path></g></svg></span><span class="gjs-lory-next" id="i5s4e"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"></path></g></svg></span></div>',
-    attributes: {class:'gjs-block gjs-block-label gjs-one-bg gjs-four-color-h',
-        
-    },
+//'PLACEHOLDER FOR NAVIGATION
+    bm.add('navigation', {
+    label: 'Navigation',
+    category: 'Basic',
+    content: '<div class="my-block">This is a simple block</div>',
+    attributes: {class: 'fa fa-sitemap'},
   });
-  
  
   /****************** BUTTONS *************************/
 
@@ -281,7 +285,7 @@ editor.on('component:selected', () => {
     openTmBtn && openTmBtn.set('active', 1);
 
 
-    // Open block manager
+  // Open block manager
     var openBlocksBtn = editor.Panels.getButton('views', 'open-blocks');
     openBlocksBtn && openBlocksBtn.set('active', 1);
   });
@@ -314,33 +318,30 @@ canvas: {
   plugins: ['skywriter','grapesjs-custom-code','gjs-component-countdown'],
   styleManager: {
       sectors: [{
-          name: 'Font Style',
+          name: 'Alignment',
           open: true,
-          buildProps: ['font-family', 'font-size', 'font-weight', 'color', 'text-align','text-shadow'],
-          properties:[
-            { name: 'Font', property: 'font-family'},
-            { name: 'Weight', property: 'font-weight'},
-            { name:  'Font color', property: 'color'},              
-            {
+          buildProps: ['text-align'],
+          properties:[{
                 property: 'text-align',
                 type: 'radio',
-                defaults: 'left',
+                defaults: 'center',
                 list: [
                   { value : 'left',  name : 'Left',    className: 'fa fa-align-left'},
                   { value : 'center',  name : 'Center',  className: 'fa fa-align-center' },
                   { value : 'right',   name : 'Right',   className: 'fa fa-align-right'},
                   { value : 'justify', name : 'Justify',   className: 'fa fa-align-justify'}
                     ],
-                  },
-            {
-                property: 'text-shadow',
-                properties: [
-                  { name: 'Horizontal position', property: 'text-shadow-h'},
-                  { name: 'Vertical position', property: 'text-shadow-v'},
-                  { name: 'Blur', property: 'text-shadow-blur'},
-                  { name: 'Color', property: 'text-shadow-color'}
-                ],
-            }],
+                  }
+          ],
+      },{
+          name: 'Font Style',
+          open: true,
+          buildProps: ['font-family', 'font-size', 'font-weight', 'color'],
+          properties:[
+            { name: 'Font', property: 'font-family'},
+            { name: 'Weight', property: 'font-weight'},
+            { name:  'Font color', property: 'color'},              
+           ],
       },{
           name: 'Sizing',
           open: false,
