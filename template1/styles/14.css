@@ -1,0 +1,28 @@
+    .page-brand-badge {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    .page-brand-badge {
+        position: fixed !important;
+        bottom: 10px !important;
+        right: 10px !important;
+        border-radius: 3px;
+        background-color: white;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1);
+        padding: 5px 7px;
+        font-family: Helvetica, sans-serif;
+        font-size: 12px;
+        text-decoration: none;
+        color: #555;
+        transition: box-shadow 0.25s;
+    }
+    .page-brand-badge:hover {
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
